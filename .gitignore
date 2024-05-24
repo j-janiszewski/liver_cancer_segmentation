@@ -1,0 +1,7 @@
+*_masks
+*_images
+models
+__pycache__
+.venv
+*.ipynb
+imgs_for_paper
