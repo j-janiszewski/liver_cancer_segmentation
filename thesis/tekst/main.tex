@@ -1,0 +1,20 @@
+% Rozdziały zaczynają się od "chapter"
+\chapter{Introduction}
+% Praca podzielona na mniejsze pliki włączane za pomocą input
+% Zajrzyj do pliku tekst/wstep.tex
+\input{tekst/wstep}
+
+% Można też wszystko pisać w jednym pliku ale będzie on duży
+\chapter{State of the art and literature review}
+
+
+% fragment nieużywany albo jeszcze niedodany można zakomentować
+\input{tekst/teoria}
+%\input{tekst/donapisania}
+
+\chapter{Practical example of DL based CT images segmentation}
+\input{tekst/praktyka}
+
+\chapter{Conclusions}
+\label{ch:podsumowanie}
+\input{tekst/podsumowanie}

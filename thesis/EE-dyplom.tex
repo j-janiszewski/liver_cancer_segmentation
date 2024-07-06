@@ -1,0 +1,104 @@
+% !TEX program = xelatex
+% !TeX encoding = utf8
+% !TeX spellcheck = pl-PL
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wybierz rodzaj pracy dyplomowej oraz wydział
+% Pick thesis type and faculty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[thesis=msc,faculty=ee]{EE-dyplom} 
+
+% thesis=[inz|mgr|bsc|msc]
+%  * inz - praca inżynierska
+%  * mgr - praca magisterska
+%  * bsc - bachelor thesis
+%  * msc - master thesis
+
+% Skróty nazw wydziałów zgodne z domenami internetowymi
+% Abbreviations of Faculties according to Internet subdomains
+% faculty=[
+%	arch,
+%	gik,
+%	ee,
+%	wip
+%	]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Konfiguracja - do personalizacji
+% Configuration - to be personalized
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\instytut{Instytut Badawczy Zjednoczonych Przedsiębiorstw Elektronowych}
+\kierunek{Informatyka Stosowana}
+\specjalnosc{Inżynieria Danych}
+\title{Identyfikacja zmian nowotworowych wątroby w obrazach CT}
+\engtitle{Identification of liver malignant lesions in CT images}
+\album{286615}
+\author{inż. Jan Janiszewski}
+\promotor{dr inż. Radosław Roszczyk}
+\date{2024}
+\longdate{2024-03-27}
+
+%\grantlicense{TRUE} % [TRUE|FALSE]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Streszczenie pracy i abstract.
+% In case of thesis in English swap the order - English version goes first.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thesisabstract{
+This work aims to summarize the current research and state of the art in detecting malignant lesions on medical images, focusing on methods using deep learning while mentioning classical ones. Additionally, the goal is to create a program that performs automatic segmentation of CT images using deep learning and evaluate its performance.
+
+The study involves a comprehensive review of the latest and most significant articles in the field. The most popular architectures of models based on deep learning are mainly discussed. In addition to describing the solutions themselves, issues of evaluating the quality of a given solution, available datasets as well as techniques for pre-processing medical images are also addressed. The methodology of the program developed as part of the work is described in detail, it is based on the U-Net network with ResNet as the encoder. Its training and testing is done on the LiTS dataset, the results are described with an interpretive discussion and evaluation of them. Details describing implementations and hardware are also included, allowing the solution to be replicated.
+
+Deep learning-based methods achieve very high efficiency in segmenting liver cancer lesions. This research area is highly active, with new competing solutions regularly emerging. Despite the existence of many methods and works on the subject there is no established standard for pre-processing medical images, as researchers employ various methodologies and parameters. The program developed in this study achieved a Dice coefficient of $0.85$ in segmenting liver cancer which does not challenge the current state of knowledge but remains a high score, as no segmentation model has reached $0.9$ when tested on LiTS. Other metrics that were used to evaluate the programs were accuracy and precision.
+
+The availability of well-labeled diverse datasets poses a significant problem for further development in this area. Currently, open-source libraries provide high-level components to create segmentation models with architectures that align with the latest advancements. This has significant implications for the medical industry, potentially increasing the availability of liver cancer diagnostics in the near future. The solution developed in this work can serve as a reference when developing tools that can achieve this.
+} % end of abstract
+
+\thesiskeywords{Deep Learning, Liver Cancer, CT Images, U-Net, ResNet, Segmentation, LiTS Dataset, Medical Imaging}
+
+\streszczeniepracy{
+Niniejsza praca ma na celu podsumowanie aktualnych badań i stanu wiedzy w zakresie wykrywania złośliwych zmian na obrazach medycznych, koncentrując się na metodach wykorzystujących głębokie uczenie, jednocześnie wspominając o metodach klasycznych. Dodatkowo, celem jest stworzenie programu, który wykonuje automatyczną segmentację obrazów CT przy użyciu głębokiego uczenia i ocena jego wydajności.
+
+Badanie obejmuje kompleksowy przegląd najnowszych i najważniejszych artykułów w tej dziedzinie. Omówione zostały głównie najpopularniejsze architektury modeli bazujących na głębokim uczeniu. Oprócz opisu samych rozwiązań, poruszane są również kwestie oceny jakości danego rozwiązania, dostępnych zbiorów danych, a także technik wstępnego przetwarzania obrazów medycznych. Szczegółowo opisano metodologię programu opracowanego w ramach pracy, który bazuje na sieci U-Net z ResNet jako koderem. Jego trening i testowanie odbywa się na zbiorze danych LiTS, wyniki są opisane wraz z dyskusją interpretacyjną i ich oceną. Uwzględniono również szczegóły dotyczące implementacji i sprzętu, umożliwiając replikację rozwiązania.
+
+Metody oparte na uczeniu głębokim osiągają bardzo wysoką skuteczność w segmentacji zmian nowotworowych wątroby. Ten obszar badawczy jest bardzo aktywny, a nowe konkurencyjne rozwiązania pojawiają się regularnie. Pomimo istnienia wielu metod i prac na ten temat, nie ma ustalonego standardu wstępnego przetwarzania obrazów medycznych, ponieważ badacze stosują różne metodologie i parametry. Program opracowany w tym badaniu osiągnął współczynnik Dice na poziomie $0.85$  w segmentacji raka wątroby, co nie stanowi wyzwania dla obecnego stanu wiedzy, ale pozostaje wysokim wynikiem, ponieważ żaden model segmentacji nie osiągnął $0.9$ podczas testowania na LiTS. Inne wskaźniki użyte do oceny programów to dokładność i precyzja.
+
+Dostępność dobrze oznakowanych różnorodnych zbiorów danych stanowi istotny problem dla dalszego rozwoju w tej dziedzinie. Obecnie biblioteki open-source zapewniają komponenty wysokiego poziomu do tworzenia modeli segmentacji o architekturze zgodnej z najnowszymi osiągnięciami. Ma to znaczące implikacje dla branży medycznej, potencjalnie zwiększając dostępność diagnostyki raka wątroby w najbliższej przyszłości. Rozwiązanie opracowane w tej pracy może służyć jako punkt odniesienia przy opracowywaniu narzędzi, które mogą to osiągnąć.
+} % koniec streszczenia
+
+\slowakluczowe{Uczenie głębokie, rak wątroby, obrazy CT, U-Net, ResNet, segmentacja, zbiór danych LiTS, obrazowanie medyczne}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tu zaczyna się dokument
+% Here is the beginning of the document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+    % Strony nagłówkowe
+    % Headers
+    \frontpages
+
+    % Właściwa treść jest w pliku tekst/main.tex
+    % Real contents is in tekst/main.tex
+    \input{tekst/main}
+
+    % Bibliografia - musi być
+    % Bibliography - must exist
+    \bibliografia
+
+    % Strony końcowe - można zakomentować, jeśli zbędne
+    % Additional pages - comment out if not needed
+    
+    % Wykaz symboli i skrótów - patrz opis w tekście przykładowym
+   % \acronymslist
+    % Spis rysunków
+    \listoffigures
+    % Spis tabel
+    \listoftables
+    % Załączniki (plik appendices.tex)
+  %  \easyappendices
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
